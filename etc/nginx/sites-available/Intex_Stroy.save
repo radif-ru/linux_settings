@@ -18,7 +18,7 @@ server {
     listen pro-gidroizolyaciya.ru:80;
     server_name pro-gidroizolyaciya.ru;
     # Устанавливаем/обновляем сертификат Let's Encrypt. include раскомментировать, return закомментировать
-#    include acme;
+    include acme;
     return 301 https://$host$request_uri;
 }
 

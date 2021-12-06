@@ -1,21 +1,21 @@
 server {
-    listen django.radif.ru:80; 
+    listen intergalactic.radif.ru:80; 
 #    listen django.radif.ru:5432;
-    server_name django.radif.ru;
+    server_name intergalactic.radif.ru;
 # Устанавливаем/обновляем сертификат Let's Encrypt
 #    include acme;
     return 301 https://$host$request_uri;
 }
 
 server {
-    server_name django.radif.ru;
-    listen django.radif.ru:443 ssl; # default_server; 
+    server_name intergalactic.radif.ru;
+    listen intergalactic.radif.ru:443 ssl; # default_server; 
 #    listen django.radif.ru:5432 ssl; 
     # выше можно добавить default_server для клиентов без SNI
 
-    ssl_certificate /etc/letsencrypt/live/django.radif.ru/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/django.radif.ru/privkey.pem;
-    ssl_trusted_certificate /etc/letsencrypt/live/django.radif.ru/chain.pem;
+    ssl_certificate /etc/letsencrypt/live/intergalactic.radif.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/intergalactic.radif.ru/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/intergalactic.radif.ru/chain.pem;
 
     ssl_stapling on;
     ssl_stapling_verify on;
@@ -35,11 +35,11 @@ server {
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
-        root /home/radif/Django_optimization_tools;
+        root /home/radif/Intergalactic_Entertainment/intergalactic;
     }
 
     location /media/ {
-	root /home/radif/Django_optimization_tools;
+	root /home/radif/Intergalactic_Entertainment/intergalactic;
     }
 
 #    location /screenshots/ {
@@ -49,6 +49,6 @@ server {
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/run/gunicorn_shop.sock;
+        proxy_pass http://unix:/run/gunicorn_intergalactic.sock;
   }
 }

@@ -1,0 +1,19 @@
+{
+  "EMAIL": {
+    "HOST": "smtp.yandex.ru",
+    "PORT": "465",
+    "HOST_USER": "mail@radif.ru",
+    "HOST_PASSWORD": "***"
+  },
+  "SOCIAL_AUTH": {
+    "GOOGLE_OAUTH2_KEY": "104125088180-63oldo9o9mbqdvqffnmtpcnk16ncq6d8.apps.googleusercontent.com",
+    "GOOGLE_OAUTH2_SECRET": "J2j9PWY4kk_A4YX7XOQJzeyp",
+    "VK_OAUTH2_KEY": "7617191",
+    "VK_OAUTH2_SECRET": "nZLXiNjXtHmytYIQw1U4"
+  },
+  "DATABASE": {
+    "NAME": "geekshop",
+    "USER": "django",
+    "PASSWORD": "geekbrains"
+  }
+}

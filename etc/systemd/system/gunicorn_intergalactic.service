@@ -1,0 +1,19 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn_intergalactic.socket
+After=network.target
+
+[Service]
+User=radif
+Group=www-data
+WorkingDirectory=/home/radif/Intergalactic_Entertainment/intergalactic
+ExecStart=/home/radif/Intergalactic_Entertainment/intergalactic/venv/bin/gunicorn \
+          --access-logfile gunicorn_intergalactic.log \
+          --error-logfile gunicorn_intergalactic_error.log \
+	  --workers 3 \
+          --bind unix:/run/gunicorn_intergalactic.sock \
+          intergalactic.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+

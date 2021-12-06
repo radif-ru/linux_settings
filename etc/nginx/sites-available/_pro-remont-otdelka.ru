@@ -1,12 +1,10 @@
 #server {
-#    listen 80;
-#    listen [::]:80;
-#    server_name 45.89.230.30;
-
-#    # Устанавливаем/обновляем сертификат Let's Encrypt
+#    listen pro-remont-otdelka.ru:80;
+#    server_name pro-remont-otdelka.ru;
+    
 ##    include acme;
 #    location / {
-#        root /home/radif/www;
+#        root /home/radif/pro-remont-otdelka.ru;
 #        index index.html index.htm;
 #        autoindex on;
 #    }
@@ -14,9 +12,9 @@
 
 
 server {
-    listen radif.ru:80;
-    server_name radif.ru;
-    # Устанавливаем/обновляем сертификат Let's Encrypt. Раскомментировать include, закомментировать return
+    listen pro-remont-otdelka.ru:80;
+    server_name pro-remont-otdelka.ru;
+# перед обновлением сертификата раскомментировать эту строку и закомментировать return
 #    include acme;
     return 301 https://$host$request_uri;
 }
@@ -24,14 +22,13 @@ server {
 
 server {
 #    listen 443 ssl;
-#    server_name radif.ru 45.89.230.30;
-    server_name radif.ru;
-    listen radif.ru:443 ssl; # default_server;
+    server_name pro-remont-otdelka.ru;
+    listen pro-remont-otdelka.ru:443 ssl; # default_server;
     # выше можно добавить default_server для клиентов без SNI
 
-    ssl_certificate /etc/letsencrypt/live/radif.ru/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/radif.ru/privkey.pem;
-    ssl_trusted_certificate /etc/letsencrypt/live/radif.ru/chain.pem;
+    ssl_certificate /etc/letsencrypt/live/pro-remont-otdelka.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/pro-remont-otdelka.ru/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/pro-remont-otdelka.ru/chain.pem;
 
     ssl_stapling on;
     ssl_stapling_verify on;
@@ -45,7 +42,7 @@ server {
     add_header Content-Security-Policy "img-src https: data:; upgrade-insecure-requests";
         
     location / {
-        root /home/radif/www;
+        root /home/radif/pro-remont-otdelka.ru;
 	index index.html index.htm;
 	autoindex on;
     }
