@@ -13,7 +13,8 @@
   },
   "DATABASE": {
     "NAME": "geekshop",
-    "USER": "django",
-    "PASSWORD": "geekbrains"
+    "USER": "radif",
+    "PASSWORD": "qwertytrewq",
+	"HOST": "db"
   }
 }
